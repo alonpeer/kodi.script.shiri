@@ -1,2 +1,5 @@
 v0.0.1
-- Initial version
+- Generated a "Hello World" script using https://github.com/xbmc/generator-kodi-addon
+- Moved it into the Kodi addons folder
+- Kodi Python is not Python: I needed to use requests lib but it was hard to make it available
+- Hard-coded requests to get a song to play
