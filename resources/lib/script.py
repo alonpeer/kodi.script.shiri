@@ -8,13 +8,24 @@ import xbmcgui
 import xbmc
 import requests
 import json
+import random
+import string
 
 ADDON = xbmcaddon.Addon()
 logger = logging.getLogger(ADDON.getAddonInfo('id'))
 
+def get_uuid():
+    uuid = kodiutils.get_setting('uuid')
+    if not uuid:
+        stringLength = 10
+        letters = string.ascii_lowercase
+        uuid = ''.join(random.choice(letters) for i in range(stringLength))
+        logger.info('Setting Shiri X-UUID to: ' + uuid)
+        kodiutils.set_setting('uuid', uuid)
+    return uuid
 
 def run():
-    uuid = 'FOOBAR'
+    uuid = get_uuid()
     headers = {'Content-Type': 'application/json', 'X-UUID': uuid}
 
     # Set artists

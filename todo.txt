@@ -2,7 +2,7 @@ TODO
 ----
 
 - Play a single song with hard-coded configurations.
-* Load UUID from configuration, set it when it doesn't exist.
+- Load UUID from configuration, set it when it doesn't exist.
 * Set song length so that it is displayed correctly while playing
 ** Alt: prevent skipping while playing
 * Play next song when a song ends.

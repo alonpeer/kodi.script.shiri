@@ -3,3 +3,4 @@ v0.0.1
 - Moved it into the Kodi addons folder
 - Kodi Python is not Python: I needed to use requests lib but it was hard to make it available
 - Hard-coded requests to get a song to play
+- Set a random UUID
