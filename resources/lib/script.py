@@ -29,7 +29,7 @@ def run():
     headers = {'Content-Type': 'application/json', 'X-UUID': uuid}
 
     # Set artists
-    payload = {'ids': [66, 52, 43]}
+    payload = {'ids': [10, 11, 12, 13,  14]}
     artists_url = 'https://api.shiriapp.org.il/api/session/current-artist/set-all'
     requests.post(artists_url, headers=headers, data=json.dumps(payload), verify=False)
 
@@ -38,6 +38,22 @@ def run():
     song = requests.post(next_url, headers=headers, verify=False).json()
     file = song['file_url']
     title = song['title'].encode('utf8')
+    try:
+        artist = song['artist']['pretty_name'].encode('utf8')
+    except TypeError:
+        artist = ''
+    try:
+        album = song['album']['pretty_name'].encode('utf8')
+    except TypeError:
+        album = ''
+    duration = song['file_duration']
+
     listitem = xbmcgui.ListItem(title)
-    listitem.setInfo('video', {'Title': title})
+    listitem.setInfo('music', {
+        'title': title,
+        'artist': artist,
+        'album': album,
+        'mediatype': 'song',
+        'duration': duration
+    })
     xbmc.Player().play(file, listitem)
