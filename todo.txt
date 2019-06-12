@@ -5,7 +5,8 @@ TODO
 - Load UUID from configuration, set it when it doesn't exist.
 - Set song length so that it is displayed correctly while playing
 - Get song name and artist name and cover art to be displayed.
-* Play next song when a song ends.
-* Play next song when "next" is clicked.
-* Create dialog for choosing artists from a fixed list.
-* Load artists list with a search command.
+- Play next song when a song ends.
+- Play next song when "next" is clicked.
+* Add items to playlist on demand.
+* Create GUI for searching and selecting artists.
+* Add add-on logo

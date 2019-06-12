@@ -5,3 +5,4 @@ v0.0.1
 - Hard-coded requests to get a song to play
 - Set a random UUID
 - Add artist name, album name and song duration
+- Create a playlist of 10 items and play them
