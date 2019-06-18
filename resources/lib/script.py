@@ -26,9 +26,11 @@ def get_uuid():
 
 def next_song(headers):
     next_url = 'https://api.shiriapp.org.il/api/session/next-song'
-    song = requests.post(next_url, headers=headers, verify=False).json()
+    song = requests.post(next_url, headers=headers, verify=kodiutils.get_setting_as_bool('verify_https')).json()
     file = song['file_url']
-    title = song['title'].encode('utf8')
+    title = song['title']
+    if title:
+        title = title.encode('utf8')
     try:
         artist = song['artist']['pretty_name'].encode('utf8')
     except TypeError:
@@ -57,7 +59,7 @@ def run():
     # Set artists
     payload = {'ids': [10, 11, 12, 13,  14]}
     artists_url = 'https://api.shiriapp.org.il/api/session/current-artist/set-all'
-    requests.post(artists_url, headers=headers, data=json.dumps(payload), verify=False)
+    requests.post(artists_url, headers=headers, data=json.dumps(payload), verify=kodiutils.get_setting_as_bool('verify_https'))
 
     playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
     playlist.clear()
