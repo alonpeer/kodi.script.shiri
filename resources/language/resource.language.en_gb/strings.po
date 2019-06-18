@@ -1,6 +1,6 @@
 # Kodi Media Center language file
 # Addon Name: Shiri Radio
-# Addon id: script.shiri
+# Addon id: plugin.audio.shiri
 # Addon Provider: Alon Peer
 msgid ""
 msgstr ""

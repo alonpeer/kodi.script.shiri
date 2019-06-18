@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.shiri" name="Shiri Radio" version="0.0.1" provider-name="Alon Peer">
+<addon id="plugin.audio.shiri" name="Shiri Radio" version="0.0.1" provider-name="Alon Peer">
     <requires>
         <import addon="xbmc.python" version="2.25.0"/>
         <import addon="script.module.requests" version="2.9.1"/>
@@ -20,9 +20,7 @@
         <news></news>
         <disclaimer></disclaimer>
         <assets>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.jpg</fanart>
+            <icon>resources/shiri-icon.png</icon>
         </assets>
     </extension>
 </addon>
-
